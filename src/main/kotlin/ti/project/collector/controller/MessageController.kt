@@ -27,7 +27,6 @@ class TiMessageController {
     @PostMapping("/set")
     @ApiOperation("Добавить или обновить сообщение по id")
     fun addMessage(@RequestBody tiMessageDao: TiMessageDao): TiMessageDao {
-        println("------$tiMessageDao")
         return tiMessageRepository.save(tiMessageDao)
     }
 
