@@ -5,7 +5,7 @@ import javax.persistence.*
 
 @Entity
 @Table(name = "ti_message")
-data class TiMessageDao(
+data class TiMessage(
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="id", nullable = false)
