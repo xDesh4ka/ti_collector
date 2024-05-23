@@ -1,4 +1,4 @@
-package ti.project.collector.service.utils
+package ti.project.collector.utils
 
 import com.google.gson.*
 import ti.project.collector.dao.entity.TiAnswer

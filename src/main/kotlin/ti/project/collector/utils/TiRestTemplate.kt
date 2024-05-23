@@ -9,8 +9,6 @@ import org.springframework.http.converter.StringHttpMessageConverter
 import org.springframework.web.client.RestTemplate
 import ti.project.collector.dao.entity.TiAnswer
 import ti.project.collector.dao.entity.TiMessage
-import ti.project.collector.service.utils.tiMessageFromJson
-import ti.project.collector.service.utils.toJson
 
 class TiRestTemplate(private val baseUrl: String,
                      private val restTemplate: RestTemplate) {
@@ -32,7 +30,6 @@ class TiRestTemplate(private val baseUrl: String,
         val entity = HttpEntity(json, headers)
         try {
             val response = restTemplate.exchange(url, HttpMethod.POST, entity, String::class.java).body
-            println(response)
             val tiMessageFromJson = tiMessageFromJson(response)
 //            val response = restTemplate.exchange(url, HttpMethod.POST, entity, String::class.java).body
             return tiMessageFromJson

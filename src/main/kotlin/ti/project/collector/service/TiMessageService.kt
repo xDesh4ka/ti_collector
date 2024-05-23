@@ -6,7 +6,7 @@ import org.springframework.stereotype.Service
 import ti.project.collector.dao.entity.TiMessage
 import ti.project.collector.dao.repo.TiAnswerRepo
 import ti.project.collector.dao.repo.TiMessageRepo
-import ti.project.collector.service.utils.getProcessedAiAnswer
+import ti.project.collector.utils.getProcessedAiAnswer
 
 
 @Service
@@ -26,8 +26,7 @@ class TiMessageService {
             val answer = tiRestService.getProcessedAiAnswer(tiMessage = tiMessage).also {
                 it.tiMessageId = tiMessage.id
             }
-            print(answer)
-            //tiAnswerRepo.save(answer)
+            tiAnswerRepo.save(answer)
         }
         return tiMessage
     }
